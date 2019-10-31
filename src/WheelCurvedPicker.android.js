@@ -19,6 +19,11 @@ const stateFromProps = (props) => {
 };
 
 class WheelCurvedPicker extends PureComponent {
+  constructor(props) {
+    super(props);
+
+    this.state = stateFromProps(props);
+  }
   static propTypes = {
     ...ViewPropTypes,
     data: PropTypes.array,
@@ -38,12 +43,8 @@ class WheelCurvedPicker extends PureComponent {
 
   onValueChange = ({ nativeEvent: { data } }) => this.props.onValueChange(data);
 
-  componentWillMount() {
+  componentDidUpdate(prevProps, prevState, snapshot) {
     this.setState(stateFromProps(this.props));
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState(stateFromProps(nextProps));
   }
 
   render() {

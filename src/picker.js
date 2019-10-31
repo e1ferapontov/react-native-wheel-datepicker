@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ColorPropType, StyleSheet, View, ViewPropTypes as RNViewPropTypes, Text } from 'react-native';
+import { ColorPropType, StyleSheet, View, ViewPropTypes as RNViewPropTypes } from 'react-native';
 import PropTypes from 'prop-types';
 import WheelCurvedPicker from './WheelCurvedPicker';
 
@@ -44,18 +44,21 @@ export default class Picker extends Component {
     this.props.onValueChange(selectedValue);
   };
 
-  componentWillReceiveProps({ selectedValue }) {
-    this.setState({ selectedValue });
+  static getDerivedStateFromProps(props, state) {
+    if (!!props.selectedValue && props.selectedValue !== state.selectedValue) {
+      return { selectedValue: props.selectedValue }
+    }
+    return null;
   }
 
   render() {
-    const { pickerData, style, ...props } = this.props;
+    const { pickerData, style, selectedValue, ...props } = this.props;
 
     return (
       <WheelCurvedPicker
         {...props}
         style={[styles.picker, style]}
-        selectedValue={this.state.selectedValue}
+        selectedValue={selectedValue}
         onValueChange={this.handleChange}
       >
         {pickerData.map((data, index) => (
@@ -67,9 +70,5 @@ export default class Picker extends Component {
         ))}
       </WheelCurvedPicker>
     );
-  }
-
-  getValue() {
-    return this.state.selectedValue;
   }
 }
