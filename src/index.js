@@ -1,5 +1,3 @@
-'use strict';
-
-import Picker from './picker';
+import Picker from './Picker';
 
 module.exports = { Picker };

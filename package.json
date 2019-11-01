@@ -2,13 +2,16 @@
   "name": "react-native-wheel-picker",
   "version": "0.0.1",
   "description": "React native iOS-style picker for android",
-  "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "homepage": "https://github.com/e1ferapontov/react-native-wheel-picker",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pinguinjkeke/react-native-wheel-datepicker.git"
+    "url": "https://github.com/e1ferapontov/react-native-wheel-picker"
+  },
+  "license": "MIT",
+  "react-native": "src/index.js",
+  "types": "src/index.d.ts",
+  "scripts": {
+    "lint": "yarn eslint ./src "
   },
   "keywords": [
     "react-native",
@@ -16,27 +19,27 @@
     "picker",
     "wheel"
   ],
-  "author": "Alexander Avakov <yaavakov@gmail.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/pinguinjkeke/react-native-wheel-datepicker/issues"
-  },
-  "homepage": "https://github.com/pinguinjkeke/react-native-wheel-datepicker#readme",
-  "dependencies": {
-    "moment": "^2.19.1"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@types/react": "^16.9.11",
+    "@types/react-native": "^0.60.22",
     "babel-eslint": "^8.0.0",
-    "eslint": "^4.7.2",
-    "eslint-config-airbnb": "^15.1.0",
-    "eslint-plugin-import": "^2.7.0",
-    "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.4.0",
-    "eslint-plugin-react-native": "^3.1.0"
+    "eslint": "6.3.0",
+    "eslint-config-airbnb": "18.0.1",
+    "eslint-config-prettier": "6.2.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react": "7.14.3",
+    "eslint-plugin-react-native": "3.7.0",
+    "lodash": "^4.17.15",
+    "react": "^16.11.0",
+    "react-native": "^0.61.3",
+    "typescript": "^3.6.4"
   },
   "peerDependencies": {
-    "moment": ">=2.0.0",
-    "prop-types": "*",
-    "react-native": ">=0.45.0"
+    "lodash": "*",
+    "react": "*",
+    "react-native": ">=0.50.0"
   },
+  "nativePackage": true
 }
