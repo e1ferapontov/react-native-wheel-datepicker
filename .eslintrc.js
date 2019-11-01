@@ -6,6 +6,7 @@ module.exports = {
     'no-console': 'off',
            // Lines will be broken before binary operators
     'operator-linebreak': ['error', 'before'],
+    'import/prefer-default-export': 'off',
            // Allow imports from dev and peer dependencies
     'import/no-extraneous-dependencies': [
       'error',
