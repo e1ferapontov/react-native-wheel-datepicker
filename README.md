@@ -1,8 +1,6 @@
 # react-native-wheel-picker
-iOS style picker component for android.
 
-
-## Introduction
+## Why
 Based on: [react-native-wheel-datepicker](https://github.com/pinguinjkeke/react-native-wheel-datepicker).
 
 Everything except for basic picker functionality was removed, the rest – refactored a bit.
