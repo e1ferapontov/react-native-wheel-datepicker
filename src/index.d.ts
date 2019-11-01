@@ -1,7 +1,9 @@
+
 declare module 'react-native-wheel-picker' {
     import * as React from 'react';
-    import * as ReactNative from 'react-native';
+    import { PickerProps as ReactNativePickerProps } from 'react-native';
 
+    type ComponentType<P = {}> = React.ComponentClass<P> | React.FunctionComponent<P>;
     type PickerDataItemObject = {
         label: string;
         value?: any;
@@ -9,9 +11,9 @@ declare module 'react-native-wheel-picker' {
 
     export type PickerDataItem = string | number | PickerDataItemObject;
 
-    export type PickerProps = ReactNative.PickerProps & {
+    export type PickerProps = ReactNativePickerProps & {
         pickerData: PickerDataItem[];
     };
 
-    export type Picker = React.FC<PickerProps>;
+    export const Picker: React.ComponentType<PickerProps>;
 }
