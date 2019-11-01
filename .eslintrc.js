@@ -12,7 +12,7 @@ module.exports = {
       'error',
       { devDependencies: true, peerDependencies: true },
     ],
-    'react/jsx-filename-extension': 'error',
+    'react/jsx-filename-extension': 'off',
            // This rule doesn't play nice with Prettier
     'react/jsx-one-expression-per-line': 'off',
            // This rule doesn't play nice with Prettier
