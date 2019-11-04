@@ -1,7 +1,3 @@
-/* eslint global-require: 0 */
+import Picker from './Picker';
 
-module.exports = {
-  get Picker() {
-    return require('./Picker').Picker;
-  },
-};
+export { Picker };

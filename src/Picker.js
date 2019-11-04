@@ -41,17 +41,10 @@ const Picker = (props) => {
       {...otherProps}
       style={[styles.picker, style]}
     >
-      {pickerData.map((data) => {
-        const renderedValue = get(data, 'value', data);
-        const renderedLabel = get(data, 'label', data.toString());
-
+      {pickerData.map((item) => {
         return (
-          <PickerItem
-            key={renderedLabel}
-            value={renderedValue}
-            label={renderedLabel}
-          />
-        )
+          <PickerItem key={item} value={item} label={item}/>
+        );
       })}
     </WheelCurvedPicker>
   );

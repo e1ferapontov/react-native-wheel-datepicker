@@ -1,4 +1,5 @@
 import React from 'react';
+import { isFunction } from 'lodash';
 import { requireNativeComponent } from 'react-native';
 
 const WheelCurvedPickerNative = requireNativeComponent('WheelCurvedPicker');
@@ -38,17 +39,16 @@ const stateFromProps = ({ children, selectedValue }) => {
 const WheelCurvedPicker = (props) => {
   const [pickerState, setPickerState] = React.useState(stateFromProps(props));
 
-  const { children, selectedValue, onValueChange, ...otherProps } = this.props;
+  const { children, selectedValue, onValueChange, ...otherProps } = props;
 
   React.useEffect(() => {
     setPickerState(stateFromProps({ children, selectedValue }));
   }, [children, selectedValue]);
 
-  const onChange = (e, ...other) => {
-    const { nativeEvent: { data } } = e;
-
-    console.debug('### android native onChange', e, other);
-    return onValueChange(data);
+  const onChange = ({ nativeEvent: { data } }) => {
+    if (isFunction(onValueChange)) {
+      return onValueChange(data);
+    }
   };
 
   return (
