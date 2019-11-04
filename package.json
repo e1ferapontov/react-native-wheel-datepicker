@@ -1,6 +1,6 @@
 {
   "name": "react-native-wheel-picker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React native iOS-style picker for android",
   "homepage": "https://github.com/e1ferapontov/react-native-wheel-picker",
   "repository": {
@@ -8,8 +8,8 @@
     "url": "https://github.com/e1ferapontov/react-native-wheel-picker"
   },
   "license": "MIT",
-  "react-native": "src/index.js",
-  "types": "src/index.d.ts",
+  "react-native": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "lint": "yarn eslint ./src "
   },
